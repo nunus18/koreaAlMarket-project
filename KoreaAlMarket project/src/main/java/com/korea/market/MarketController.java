@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.MarketDAO;
+import util.Comm;
 
 @Controller
 public class MarketController {
@@ -13,7 +14,7 @@ public class MarketController {
 	}
 @RequestMapping(value= {"/","/market_main.do"})
 public String main() {
-	return "/WEB-INF/views/market/market_main.jsp";
+	return Comm.PATH+"market_main.jsp";
 }
 	
 }

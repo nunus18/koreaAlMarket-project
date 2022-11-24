@@ -21,12 +21,34 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean> -->
 	
+	<!-- <context:component-scan base-package="com.mycom.db" /> -->
+	
 	<!-- @Autowired(자동생성)을 위해 반드시 필요한 코드 -->
 	<context:annotation-config/>
 	
-<!-- <context:component-scan base-package="com.korea.db" /> -->	
-	<!-- 컨트롤러의 수동생성 -->
-	<beans:bean class="com.korea.market.MarketController">
-	<beans:property name="market_dao" ref="market_daoBean"/>
+	<!-- controller 수동생성 -->
+	<beans:bean class="com.korea.market.UserController">
+		<beans:constructor-arg ref="user_daoBean"/>
 	</beans:bean>
+	<beans:bean class="com.korea.market.MessageController">
+		
+	</beans:bean>
+	
 </beans:beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

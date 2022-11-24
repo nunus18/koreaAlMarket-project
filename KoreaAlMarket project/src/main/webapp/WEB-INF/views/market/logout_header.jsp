@@ -62,7 +62,7 @@
 	margin-top: 10px;
 }
 .login {
-	margin-right: 50px;
+	margin-right: 20px;
 }
 
 a:link, a:hover, a:visited {
@@ -92,7 +92,7 @@ a:link, a:hover, a:visited {
 <body>
 <!--------------------------------------------------제목과 로그인----------------------------------------------------------------->
 	<div class="headerContainer">
-		<div class="logo"><a href="#">신선노름</a></div>
+		<div class="logo"><a href="main.do">신선노름</a></div>
 <!--------------------------------------------------검색창 부트스트랩------------------------------------------------------------->
 		<div class="search">
 			<nav class="navbar navbar-light bg-light">
@@ -107,8 +107,9 @@ a:link, a:hover, a:visited {
 		</div>
 <!--------------------------------------------------로그인링크----------------------------------------------------------------->		
 		<div class="loginAndCart">
-			<span class="login"><a href="#">로그인</a></span>
+			<span class="login"><a href="#">${ vo.name } 님</a></span>
 			<span class="login"><a href="#">장바구니</a></span>
+			<span class="login"><a href="#">로그아웃</a></span>
 		</div>
 	</div>
 <!--------------------------------------------------카테고리----------------------------------------------------------------->

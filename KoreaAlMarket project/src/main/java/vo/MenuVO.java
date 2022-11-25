@@ -1,24 +1,9 @@
 package vo;
 
-import org.springframework.web.multipart.MultipartFile;
+public class MenuVO {
 
-public class MarketVO {
-	private int idx, product_idx,price,product_number,degree,volume,star;
-	private String name,p_type,info,expiration_date, filename;
-	private MultipartFile photo;
-	
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	public MultipartFile getPhoto() {
-		return photo;
-	}
-	public void setPhoto(MultipartFile photo) {
-		this.photo = photo;
-	}
+	private int idx, product_idx, price, product_number, degree, volume, star;
+	private String name, p_type, info, expiration_date;
 	public int getIdx() {
 		return idx;
 	}
@@ -85,5 +70,6 @@ public class MarketVO {
 	public void setExpiration_date(String expiration_date) {
 		this.expiration_date = expiration_date;
 	}
+	
 	
 }

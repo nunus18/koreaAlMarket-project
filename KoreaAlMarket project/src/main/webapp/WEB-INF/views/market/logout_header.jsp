@@ -92,7 +92,7 @@ a:link, a:hover, a:visited {
 <body>
 <!--------------------------------------------------제목과 로그인----------------------------------------------------------------->
 	<div class="headerContainer">
-		<div class="logo"><a href="main.do">신선노름</a></div>
+		<div class="logo"><a href="menu.do">신선노름</a></div>
 <!--------------------------------------------------검색창 부트스트랩------------------------------------------------------------->
 		<div class="search">
 			<nav class="navbar navbar-light bg-light">
@@ -114,9 +114,9 @@ a:link, a:hover, a:visited {
 	</div>
 <!--------------------------------------------------카테고리----------------------------------------------------------------->
 	<div class="categoryContainer">
-			<div class="alchol1"><a href="#">양조주</a></div>
-			<div class="alchol2"><a href="#">증류주</a></div>
-			<div class="alchol3"><a href="#">혼성주</a></div>
+			<div class="alchol1"><a href="http://localhost:9090/market/alchol11.do">양조주</a></div>
+			<div class="alchol2"><a href="http://localhost:9090/market/alchol12.do">증류주</a></div>
+			<div class="alchol3"><a href="http://localhost:9090/market/alchol13.do">혼성주</a></div>
 			<div class="food1"><a href="#">밀키트</a></div>
 			<div class="food2"><a href="#">건안주</a></div>
 			<div class="food3"><a href="#">과자</a></div>

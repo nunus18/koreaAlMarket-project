@@ -98,6 +98,8 @@
 	</style>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/views/market/login_header.jsp"></jsp:include>
+	
 	<div class="css-findid-box">
 		<div class="css-findid-title">아이디 찾기</div>
 		<div class="css-findid-main">

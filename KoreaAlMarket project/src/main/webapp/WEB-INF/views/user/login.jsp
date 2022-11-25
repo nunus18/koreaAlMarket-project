@@ -58,6 +58,13 @@
 
 </head>
 <body>
+	<c:if test="${ sessionScope.vo ne null }">
+		<jsp:include page="/WEB-INF/views/market/logout_header.jsp"></jsp:include>
+	</c:if>
+	<c:if test="${ sessionScope.vo eq null }">
+		<jsp:include page="/WEB-INF/views/market/login_header.jsp"></jsp:include>
+	</c:if>
+
 	<div align="center">로그인</div>
 	<form align="center">
 		<div>
@@ -90,7 +97,7 @@
 			</div>
 		</div>
 		<div>
-			<a href="">아이디 찾기</a>
+			<a href="find/id.do">아이디 찾기</a>
 			<span>|</span>
 			<a href="">비밀번호 찾기</a>
 		</div>

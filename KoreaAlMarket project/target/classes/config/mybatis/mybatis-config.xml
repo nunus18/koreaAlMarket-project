@@ -9,13 +9,13 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="vo.MarketVO" alias="market"/>
-			<typeAlias type="vo.UserVO" alias="user"/>
+		<typeAlias type="vo.MenuVO" alias="menu"/>
+		<typeAlias type="vo.UserVO" alias="user"/>
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource = "config/mybatis/mapper/market.xml"/>
 		<mapper resource="config/mybatis/mapper/user.xml" />
+		<mapper resource="config/mybatis/mapper/menu.xml" />
 	</mappers>
 	
 </configuration>

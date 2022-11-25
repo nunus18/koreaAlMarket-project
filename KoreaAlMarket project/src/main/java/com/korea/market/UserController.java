@@ -24,11 +24,6 @@ public class UserController {
 		passwordEncoder = new BCryptPasswordEncoder();
 	}
 	
-	@RequestMapping(value = {"/", "main.do"})
-	public String main() {
-		return Comm.M_PATH + "market_main.jsp";
-	}
-	
 	//로그인 페이지
 	@RequestMapping(value = "login.do")
 	public String login() {
@@ -47,7 +42,7 @@ public class UserController {
 			
 			if(passwordEncoder.matches(pw, vo.getPw())) {
 				session.setAttribute("vo", vo);
-				return "redirect:main.do";
+				return "redirect:menu.do";
 			} else {
 				result = "iv_pw";
 			}
@@ -73,7 +68,7 @@ public class UserController {
 		int res = user_dao.insert(vo);
 		
 		
-		return "redirect:main.do";
+		return "redirect:menu.do";
 	}
 	
 	//id 중복확인

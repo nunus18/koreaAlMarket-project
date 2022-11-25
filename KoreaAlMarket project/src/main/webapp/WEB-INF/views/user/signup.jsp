@@ -379,7 +379,7 @@
 			if(!idFlag) {
 				alert("아이디 확인하세요.");
 			} 
-			/* else if(!pwFlag) {
+			 else if(!pwFlag) {
 				alert("비밀번호를 확인하세요.");
 			} else if(!c_pwFlag) {
 				alert("비밀번호 확인을 확인하세요.");
@@ -395,7 +395,7 @@
 				alert("성별을 선택하세요.");
 			} else if(!birthFlag) {
 				alert("생년월일을 확인하세요.");
-			}  */
+			} 
 			else {
 				f.method = "post";
 				f.action = "signup.do";
@@ -462,6 +462,9 @@
 
 </head>
 <body>
+
+	<jsp:include page="/WEB-INF/views/market/login_header.jsp"></jsp:include>
+	
 	<div align="center">회원가입</div>
 	
 	<div>

@@ -7,5 +7,8 @@
 		<constructor-arg ref="sqlSessionBean"/>
 	</bean>
 
+	<bean id="menu_daoBean" class="dao.MenuDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
 	
 </beans>

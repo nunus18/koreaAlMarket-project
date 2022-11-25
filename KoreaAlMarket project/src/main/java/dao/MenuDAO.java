@@ -4,15 +4,19 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import vo.MarketVO;
+import vo.MenuVO;
 
-public class MarketDAO {
+public class MenuDAO {
+
 	SqlSession sqlSession;
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	public List<MarketVO> selectList() {
-		List<MarketVO> list = sqlSession.selectList("m.product_list");
+	
+	//메뉴 전체 조회
+	public List<MenuVO> selectlist(){
+		List<MenuVO> list = sqlSession.selectList("m.menu_list");
 		return list;
 	}
+	
 }

@@ -30,10 +30,13 @@
 	<beans:bean class="com.korea.market.UserController">
 		<beans:constructor-arg ref="user_daoBean"/>
 	</beans:bean>
+	
 	<beans:bean class="com.korea.market.MessageController">
-		
 	</beans:bean>
 	
+	<beans:bean class="com.korea.market.MenuController">
+		<beans:property name="menu_dao" ref="menu_daoBean"/>
+	</beans:bean>
 </beans:beans>
 
 

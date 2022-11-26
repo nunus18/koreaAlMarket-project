@@ -147,9 +147,6 @@
   </select>
   </div> -->
   
-
-	
-	
 	<!--------------------------------------------------주류내용----------------------------------------------------------------->
 		<c:if test="${ idx % 3 == 0 }">
 			<div class="menu_box">
@@ -159,7 +156,7 @@
 					<div class="content">
 						<!-- 이미지 클릭시 상세페이지로 넘어가기 -->
 						<img class="img" src="resources/img/${ vo.product_idx }.jpg" 
-							onclick="location.href='detailPage.do'">
+							onclick="location.href='product.do'">
 							
 						<div class="name">이름 : ${ vo.name }</div>
 						<div class="volume">용량 : ${ vo.volume }</div>
@@ -178,7 +175,7 @@
 					<div class="content">
 						<!-- 이미지 클릭시 상세페이지로 넘어가기 -->
 						<img class="img" src="resources/img/${ vo.product_idx }.jpg" 
-							onclick="location.href='detailPage.do'">
+							onclick="location.href='product.do'">
 							
 						<div class="name">이름 : ${ vo.name }</div>
 						<div class="volume">용량 : ${ vo.volume }</div>

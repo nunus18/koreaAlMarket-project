@@ -37,6 +37,10 @@
 	<beans:bean class="com.korea.market.MenuController">
 		<beans:property name="menu_dao" ref="menu_daoBean"/>
 	</beans:bean>
+	
+		<beans:bean class="com.korea.market.ProductController">
+		<beans:property name="product_dao" ref="product_daoBean"/>
+	</beans:bean>
 </beans:beans>
 
 

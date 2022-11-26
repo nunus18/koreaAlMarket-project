@@ -3,21 +3,28 @@ package com.korea.market;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import dao.UserDAO;
 import util.Comm;
+import util.Common;
 import vo.UserVO;
+
 
 @Controller
 public class UserController {
 	private UserDAO user_dao;
 	private BCryptPasswordEncoder passwordEncoder;
 	
+	@Autowired
+	HttpServletRequest request;
+	
+	@Autowired
+	HttpSession session;
 	
 	public UserController(UserDAO user_dao) {
 		this.user_dao = user_dao;
@@ -29,17 +36,14 @@ public class UserController {
 	public String login() {
 		return Comm.U_PATH + "login.jsp";
 	}
-	
+
 	//로그인 
 	@RequestMapping("verify_login.do")
-	public String verify_login(String id, String pw, HttpServletRequest request) {
+	public String verify_login(String id, String pw) {
+		session = request.getSession();
 		UserVO vo = user_dao.selectOne(id);
-		HttpSession session =request.getSession();	
-		
 		String result = "iv_id";
-		
 		if(vo != null) {
-			
 			if(passwordEncoder.matches(pw, vo.getPw())) {
 				session.setAttribute("vo", vo);
 				return "redirect:menu.do";
@@ -47,11 +51,17 @@ public class UserController {
 				result = "iv_pw";
 			}
 		}
-		
 		session.setAttribute("input_id", id);
 		session.setAttribute("input_pw", pw);
 		session.setAttribute("login_result", result);
 		return "redirect:login.do";
+	}
+	
+	//로그아웃?
+	@RequestMapping(value = "logout.do")
+	public String logout() {
+		session.removeAttribute("vo");
+		return "redirect:menu.do";
 	}
 	
 	//signup 폼으로 
@@ -63,11 +73,8 @@ public class UserController {
 	//signup
 	@RequestMapping("signup.do")
 	public String signup(UserVO vo) {
-		
 		vo.setPw(passwordEncoder.encode(vo.getPw()));
 		int res = user_dao.insert(vo);
-		
-		
 		return "redirect:menu.do";
 	}
 	
@@ -76,7 +83,6 @@ public class UserController {
 	@ResponseBody
 	public String checkID(String id) {
 		String res = user_dao.checkID(id);
-		
 		String result = "exists";
 		if(res == null) {
 			result = "d_exists";
@@ -89,7 +95,6 @@ public class UserController {
 	@ResponseBody
 	public String checkEmail(String email) {
 		String res = user_dao.checkEmail(email);
-		
 		String result = "exists";
 		if(res == null) {
 			result = "d_exists";
@@ -103,12 +108,3 @@ public class UserController {
 		return Comm.U_PATH + "findID.jsp";
 	}
 }
-
-
-
-
-
-
-
-
-

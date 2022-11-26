@@ -18,6 +18,14 @@ public class MenuController {
 	public void setMenu_dao(MenuDAO menu_dao) {
 		this.menu_dao = menu_dao;
 	}
+	@RequestMapping("/search.do")
+	public String search(String search) {
+		return "/WEB-INF/views/market/search.jsp";
+	}
+	@RequestMapping("/mypage.do")
+	public String mypage() {
+		return "/WEB-INF/views/market/mypage.jsp";
+	}
 	
 	@RequestMapping(value= {"/", "menu.do"})
 	public String list ( Model model ) {
@@ -63,14 +71,4 @@ public class MenuController {
 		return Common.PATH + "13.jsp";
 	}
 	
-	@RequestMapping("/detailPage.do")
-	public String detailPage( Model model ) {
-		
-		//DAO를 통해서 조회된 목록을 요청
-		List<MenuVO> list = menu_dao.selectlist();
-		
-		model.addAttribute("m_list",list);		
-		
-		return Common.PATH2 + "detailPage.jsp";
-	}
 }

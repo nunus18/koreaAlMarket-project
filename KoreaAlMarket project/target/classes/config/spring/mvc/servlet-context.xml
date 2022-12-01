@@ -38,8 +38,12 @@
 		<beans:property name="menu_dao" ref="menu_daoBean"/>
 	</beans:bean>
 	
-		<beans:bean class="com.korea.market.ProductController">
+	<beans:bean class="com.korea.market.ProductController">
 		<beans:property name="product_dao" ref="product_daoBean"/>
+	</beans:bean>
+	
+	<beans:bean class="com.korea.market.ShopController">
+		<beans:property name="shop_dao" ref="shop_daoBean"/>
 	</beans:bean>
 </beans:beans>
 

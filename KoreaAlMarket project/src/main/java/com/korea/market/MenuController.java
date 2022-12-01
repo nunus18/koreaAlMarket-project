@@ -1,6 +1,8 @@
 package com.korea.market;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,22 +20,36 @@ public class MenuController {
 	public void setMenu_dao(MenuDAO menu_dao) {
 		this.menu_dao = menu_dao;
 	}
+
+	@RequestMapping("/mypage.do")
+	public String mypage() {
+		return "/WEB-INF/views/market/mypage.jsp";
+	}
+	@RequestMapping("/order.do")
+	public String order() {
+		return "/WEB-INF/views/order/order.jsp";
+	}
+	
 	@RequestMapping("/search.do")
 	public String search(String search) {
 		return "/WEB-INF/views/market/search.jsp";
 	}
-	@RequestMapping("/mypage.do")
-	public String mypage() {
-		return "/WEB-INF/views/market/mypage.jsp";
+	@RequestMapping(value = { "/search1.do" })
+	public String list(Model model, String search) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("search", search);
+		List<MenuVO> list = menu_dao.search(map);
+		model.addAttribute("list", list);
+		return "/WEB-INF/views/market/search.jsp";
 	}
 	
 	@RequestMapping(value= {"/", "menu.do"})
 	public String list ( Model model ) {
 		
 		//DAO를 통해서 조회된 목록을 요청
-		List<MenuVO> list = menu_dao.selectlist();
+		List<MenuVO> list = menu_dao.recolist();
 		
-		model.addAttribute("m_list",list);
+		model.addAttribute("r_list",list);
 		
 		return Common.PATH + "menu.jsp";
 	}

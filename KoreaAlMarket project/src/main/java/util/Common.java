@@ -10,4 +10,9 @@ public interface Common {
 	//한 페이지에 보여질 페이지 메뉴의 수
 	//< 1, 2, 3 >
 	public static int BLOCKPAGE = 3;
+	
+	public String S_PATH="/WEB-INF/views/shop/";
+	
+	public void delete(int idx);
+
 }

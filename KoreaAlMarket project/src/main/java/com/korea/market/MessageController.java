@@ -13,7 +13,7 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 @Controller
 public class MessageController {
 
-	@RequestMapping("sendSms.do")
+	@RequestMapping(value = {"sendSms.do", "find/sendSms.do"})
 	@ResponseBody
 	public String sendSms(String userPhoneNo) throws Exception {
 		  Integer randomNumber = (int) (Math.random() * (999999 - 100000 + 1)) + 100000;

@@ -48,7 +48,7 @@
 	flex-direction: row;
 	width: 600px;
 	justify-content: space-around;
-	margin: 100px auto;
+	margin: auto;
 }
 
 .loginAndCart {
@@ -91,7 +91,7 @@ function search() {
 		alert("검색어를 입력하세요");
 		return;
 	}
-	location.href = "search.do?search=" + search;
+	location.href = "search1.do?search=" + search;
 }
 
 </script>

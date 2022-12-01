@@ -31,4 +31,19 @@ public class UserDAO {
 		UserVO vo = sqlSession.selectOne("u.user_selectOne", id);
 		return vo;
 	}
+	//이름과 휴대폰 번호가 일차하는 레코드 조회
+	public UserVO findUser(UserVO vo) {
+		UserVO res = sqlSession.selectOne("u.user_findUser", vo);
+		return res;
+	}
+	//아이디와 휴대폰 번호가 일치하는 레코드 조회
+	public UserVO findPw(UserVO vo) {
+		UserVO res = sqlSession.selectOne("u.user_findPw", vo);
+		return res;
+	}
+	//비밀번호 변경
+	public int changePw(UserVO vo) {
+		int res = sqlSession.update("u.user_changePw", vo);
+		return res;
+	}
 }

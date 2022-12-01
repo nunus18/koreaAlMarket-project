@@ -15,4 +15,8 @@
 		<property name="sqlSession" ref="sqlSessionBean"/>
 	</bean>
 	
+	<bean id="shop_daoBean" class="dao.ShopDAO">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+	
 </beans>

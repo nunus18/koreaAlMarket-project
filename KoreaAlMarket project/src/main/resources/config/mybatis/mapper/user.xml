@@ -33,11 +33,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="user_selectOne" parameterType="String" resultType="user">
 		select * from market_user where id=#{id}
 	</select>
+	
+	<!-- 이름과 휴대폰 번호가 일차하는 레코드 조회 -->
+	<select id="user_findUser" parameterType="user" resultType="user">
+		select * from market_user where name=#{name} and phone=#{phone}
+	</select>
+	
+	<!-- //아이디와 휴대폰 번호가 일치하는 레코드 조회 -->
+	<select id="user_findPw" parameterType="user" resultType="user">
+		select * from market_user where id=#{id} and phone=#{phone}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="user_changePw" parameterType="user">
+		update market_user set pw = #{pw}
+		where id=#{id}
+	</update>
 </mapper>
-
-
-
-
 
 
 

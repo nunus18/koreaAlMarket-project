@@ -1,7 +1,5 @@
 package dao;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 
 import vo.ProductVO;
@@ -14,9 +12,9 @@ public class ProductDAO {
 	}
 	
 	//상품 전체 조회
-	public List<ProductVO> selectlist(){
-		List<ProductVO> list = sqlSession.selectList("m.menu_list");
-		return list;
+	public ProductVO selectOne(int idx) {
+		ProductVO vo = sqlSession.selectOne("p.product_one", idx);
+		return vo;
 	}
 	
 }

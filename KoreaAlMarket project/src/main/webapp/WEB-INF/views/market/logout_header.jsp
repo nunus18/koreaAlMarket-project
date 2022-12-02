@@ -39,7 +39,7 @@
 	margin-left: 300px;
 }
 
-.food3 {
+.alchol3 {
 	margin-right: 300px;
 }
 
@@ -47,7 +47,7 @@
 	display: flex;
 	flex-direction: row;
 	width: 600px;
-	justify-content: space-around;
+	justify-content: space-between;
 	margin: auto;
 }
 
@@ -109,7 +109,7 @@ function search() {
 	</div>
 
 <!--------------------------------------------------로그인링크----------------------------------------------------------------->		
-	<div class="loginAndCart">
+		<div class="loginAndCart">
 			<span class="login"><a href="mypage.do">${ vo.name } 님</a></span>
 			<span class="logout"><a href="logout.do">로그아웃</a></span>
 		</div>
@@ -119,8 +119,6 @@ function search() {
 			<div class="alchol1"><a href="alchol11.do">양조주</a></div>
 			<div class="alchol2"><a href="alchol12.do">증류주</a></div>
 			<div class="alchol3"><a href="alchol13.do">혼성주</a></div>
-			<div class="food1"><a href="#">밀키트</a></div>
-			<div class="food2"><a href="#">건안주</a></div>
-			<div class="food3"><a href="#">과자</a></div>
 	</div>
 </body>
+</html>

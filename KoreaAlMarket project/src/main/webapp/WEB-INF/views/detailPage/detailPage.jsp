@@ -62,47 +62,48 @@
 		<jsp:include page="/WEB-INF/views/market/login_header.jsp"></jsp:include>
 	</c:if>
 	<br>
+	
 	<div class="line"></div>
 	<div class="content_top">
 		<div class="ct_left_area">
 			<img class="img" src="resources/img/${ vo.product_idx }.jpg">
 		</div>
 	<div class="ct_right_area">
-		<c:forEach var="po" items="${p_list}">
 			<div class="title">
-				<h1>${po.name}</h1>
+				<h1>${vo.name}</h1>
 			</div>
 			<div class="line"></div>
 			<div class="author">
-				<span> ${po.p_type} </span> <span>|</span> <span>
-					${po.degree}도 </span> <span>|</span> <span> 유통기한
-					${po.expiration_date} </span>
+				<span> ${vo.p_type} </span> <span>|</span> <span>
+					${vo.degree}도 </span> <span>|</span> <span> 유통기한
+					${vo.expiration_date} </span>
 			</div>
 			<div class="line"></div>
-			<div class="price">판매가 : ${ po.price } 원</div>
+			<div class="price">판매가 : ${ vo.price } 원</div>
 			<div class="line"></div>
 			<div class="button">
 				<div class="button_quantity">
-					주문수량 <input type="text" value="1"> <span>
-						<button>+</button>
-						<button>-</button>
+					<div class="product_number">남은 수량 : ${ vo.product_number } 개</div>
+					주문수량 <select id="cnt" name="cnt" onchange="su();">
+									<option value="0">수량을 선택해주세요</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+							</select>
 					</span>
 				</div>
 				<div class="button_set">
-					<a class="btn_cart">장바구니 담기</a> <a class="btn_buy">바로구매</a>
+					<a class="btn_cart" onclick="">장바구니 담기</a> 
+					<a class="btn_buy" onclick="">바로구매</a>
 				</div>
 			</div>
-		</c:forEach>
 	</div>
 	</div>
 	<div class="line"></div>
 	<!-- 술댓글로 바꿔야함 -->
-	<div class="content_middle">
-		<div class="book_intro">${goodsInfo.bookIntro}</div>
-		<div class="book_content">${goodsInfo.bookContents }</div>
-	</div>
-	<div class="line"></div>
-	<div class="content_bottom">리뷰</div>
+	<div class="content_middle">리뷰</div>
 
 </body>
 </html>

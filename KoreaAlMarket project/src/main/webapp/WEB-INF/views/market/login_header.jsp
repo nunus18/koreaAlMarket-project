@@ -39,7 +39,7 @@
 	margin-left: 300px;
 }
 
-.food3 {
+.alchol3 {
 	margin-right: 300px;
 }
 
@@ -118,9 +118,6 @@ function search() {
 			<div class="alchol1"><a href="alchol11.do">양조주</a></div>
 			<div class="alchol2"><a href="alchol12.do">증류주</a></div>
 			<div class="alchol3"><a href="alchol13.do">혼성주</a></div>
-			<div class="food1"><a href="#">밀키트</a></div>
-			<div class="food2"><a href="#">건안주</a></div>
-			<div class="food3"><a href="#">과자</a></div>
 	</div>
 </body>
 </html>

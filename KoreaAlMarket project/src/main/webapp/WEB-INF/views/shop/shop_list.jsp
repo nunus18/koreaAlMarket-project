@@ -145,6 +145,10 @@ if( xhr.readyState == 4 && xhr.status == 200 ){
 
 
 <style type="text/css">
+img{
+	width:50px;
+	height:50px;
+}
 .headerContainer {
 	display: flex;
 	justify-content: space-between;
@@ -389,9 +393,12 @@ table.calculation2 td {
 										value="${vo.price * vo.buyNO}" onClick="calc(this);" />
 									</td>
 
-									<td style="border-left: none; border-right: none;">1</td>
+									<td style="border-left: none; border-right: none;">
+									<img class="img" src="resources/img/${ vo.product_idx }.jpg" 
+										onclick="location.href='product.do'">
+									</td>
 
-									<input type="hidden" name="idx" value="${ vo.idx }">
+									<input type="hidden" name="idx" value="${ vo.regdate }">
 									<td
 										style="border-align: left; padding-left: 10px; boder-left: none; font-weight: bold;">${ vo.userId }</td>
 

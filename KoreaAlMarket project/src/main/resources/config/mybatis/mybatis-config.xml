@@ -12,12 +12,14 @@
 		<typeAlias type="vo.MenuVO" alias="menu"/>
 		<typeAlias type="vo.UserVO" alias="user"/>
 		<typeAlias type="vo.ShopVO" alias="shop"/>
+		<typeAlias type="vo.ProductVO" alias="product"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="config/mybatis/mapper/user.xml" />
 		<mapper resource="config/mybatis/mapper/menu.xml" />
 		<mapper resource="config/mybatis/mapper/shop.xml" />
+		<mapper resource="config/mybatis/mapper/product.xml" />
 	</mappers>
 	
 </configuration>

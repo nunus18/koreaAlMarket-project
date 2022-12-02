@@ -11,6 +11,42 @@
 <script src="/market/resources/js/subMenuSelect.js"></script>
 
 <style>
+.submenuContainer {
+	display: flex; /* 내용 한줄로 */
+	height: 80px;
+	width: 800px;
+	font-size: 25px;
+	background-color: #9FE7F6;
+	font-family: 'Nanum Myeongjo', serif;
+	font-weight: 700;
+	margin: auto; /* div를 가운데 */
+	text-align: left; /* text를 가운데 */
+	
+	justify-content: space-around;
+	letter-spacing: 0.2em; /* 글자사이 간격  */
+	padding-top: 25px; /* 위에서부터 간격 */
+	
+}
+
+.box{
+  appearance: none;
+  text-align-last: center;
+  font-size: 25px;
+  width : 200px;
+  background-color: #9FE7F6;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  
+  
+}
+
+.selectBox{
+	display: flex;
+    justify-content: center;
+    heigth: 200px;
+    
+}
+
 .mainContent{
 	
     
@@ -23,18 +59,12 @@
 	margin-bottom: 10px; */
 	font-family: 'Nanum Myeongjo', serif;
 	font-weight: 700;
-	align-
+	align-items: center;
+}
+
+
 </style>
-	<!-- 부트스트랩 -->
-<!-- <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-	crossorigin="anonymous"></script>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous"> -->
+
 </head>
 
 <body>
@@ -61,7 +91,7 @@
 						
 						<!-- 이미지 클릭시 상세페이지로 넘어가기 -->
 						<img class="img" src="resources/img/${ vo.product_idx }.jpg" 
-							onclick="location.href='product.do'">
+							onclick="location.href='product.do?idx=${vo.idx}'">
 						<div class="name">이름 : ${ vo.name }</div>
 						<div class="volume">별점 : ${ vo.star }</div>
 						<div class="price">가격 : ${ vo.price }</div>

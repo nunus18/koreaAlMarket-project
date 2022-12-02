@@ -7,6 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="product_list" resultType="product">
 		select * from product order by idx
 	</select>
+		
+	<!-- idx에 해당하는 한건 상세보기 -->
+	<select id="product_one" resultType="product" parameterType="int">
+		select * from product where idx=#{idx}
+	</select>
 	
 </mapper>
 

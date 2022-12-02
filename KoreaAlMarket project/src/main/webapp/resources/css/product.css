@@ -12,6 +12,7 @@
   	.ct_left_area{
 		float: left;
 	    width: 50%;
+	    margin: auto;
 	    height: 100%;
   	}
   		.image_wrap{

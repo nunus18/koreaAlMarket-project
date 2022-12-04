@@ -336,8 +336,8 @@ table.calculation2 td {
 
 
 </head>
-<body class="cssBody">
-
+<body>
+	<div  class="cssBody">
 	<div id="frame">
 		<form>
 			<div id="frame2">
@@ -440,6 +440,7 @@ table.calculation2 td {
 				</div>
 			</div>
 		</form>
+	</div>
 	</div>
 </body>
 </html>

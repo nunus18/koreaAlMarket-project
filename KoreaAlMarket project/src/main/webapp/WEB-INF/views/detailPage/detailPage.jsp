@@ -66,24 +66,24 @@
 	<div class="line"></div>
 	<div class="content_top">
 		<div class="ct_left_area">
-			<img class="img" src="resources/img/${ vo.product_idx }.jpg">
+			<img class="img" src="resources/img/${ productVo.product_idx }.jpg">
 		</div>
 	<div class="ct_right_area">
 			<div class="title">
-				<h1>${vo.name}</h1>
+				<h1>${productVo.name}</h1>
 			</div>
 			<div class="line"></div>
 			<div class="author">
-				<span> ${vo.p_type} </span> <span>|</span> <span>
-					${vo.degree}도 </span> <span>|</span> <span> 유통기한
-					${vo.expiration_date} </span>
+				<span> ${productVo.p_type} </span> <span>|</span> <span>
+					${productVo.degree}도 </span> <span>|</span> <span> 유통기한
+					${productVo.expiration_date} </span>
 			</div>
 			<div class="line"></div>
-			<div class="price">판매가 : ${ vo.price } 원</div>
+			<div class="price">판매가 : ${ productVo.price } 원</div>
 			<div class="line"></div>
 			<div class="button">
 				<div class="button_quantity">
-					<div class="product_number">남은 수량 : ${ vo.product_number } 개</div>
+					<div class="product_number">남은 수량 : ${ productVo.product_number } 개</div>
 					주문수량 <select id="cnt" name="cnt" onchange="su();">
 									<option value="0">수량을 선택해주세요</option>
 									<option value="1">1</option>

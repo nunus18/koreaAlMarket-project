@@ -26,12 +26,12 @@ public class ProductController {
 	@RequestMapping("/product.do")
 	public String product( Model model, int idx ) {
 		//view.do?idx=10
-		
+
 		idx = Integer.parseInt( request.getParameter("idx"));
 		
 		ProductVO vo = product_dao.selectOne(idx); //상세보기 페이지를 위한 객체검색
 
-		model.addAttribute("vo", vo);//바인딩
+		model.addAttribute("productVo", vo);//바인딩
 		return "/WEB-INF/views/detailPage/detailPage.jsp";
 	}
 }

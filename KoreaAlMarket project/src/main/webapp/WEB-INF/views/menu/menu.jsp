@@ -92,9 +92,10 @@
 						<!-- 이미지 클릭시 상세페이지로 넘어가기 -->
 						<img class="img" src="resources/img/${ vo.product_idx }.jpg" 
 							onclick="location.href='product.do?idx=${vo.idx}'">
-						<div class="name">이름 : ${ vo.name }</div>
-						<div class="volume">별점 : ${ vo.star }</div>
-						<div class="price">가격 : ${ vo.price }</div>
+						<div class="name">${ vo.name }</div>
+						<div class="info">::: ${ vo.info } :::</div><br>
+						<div class="volume">별점 : ${ vo.star } 점</div>
+						<div class="price">가격 : ${ vo.price } 원</div>
 					</div>
 					
 				</c:forEach>

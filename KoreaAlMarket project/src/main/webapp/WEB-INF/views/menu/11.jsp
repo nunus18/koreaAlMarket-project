@@ -10,6 +10,49 @@
 <link rel="stylesheet" href="/market/resources/css/menu.css">
 <script src="/market/resources/js/subMenuSelect.js"></script>
 
+<script>
+function price() { 
+	
+	// 가격을 가져옴
+	var price = document.getElementById('price');
+	var value = price.options[price.selectedIndex].value;	
+	
+	location.href="alchol11.do?value="+value;
+	
+}
+
+function degree() { 
+	
+	// 도수를 가져옴
+	var degree = document.getElementById('degree');
+	var value = degree.options[degree.selectedIndex].value;	
+
+	location.href="alchol11.do?value="+value;
+	
+}
+
+function volume() { 
+	
+	// 용량을 가져옴
+	var volume = document.getElementById('volume');
+	var value = volume.options[volume.selectedIndex].value;	
+	
+	location.href="alchol11.do?value="+value;
+	
+}
+
+function star() { 
+	
+	// 별점을 가져옴
+	var star = document.getElementById('star');
+	var value = star.options[star.selectedIndex].value;
+	
+	location.href="alchol11.do?value="+value;
+	
+}
+	
+</script>
+
 <style>
 .submenuContainer {
 	display: flex; /* 내용 한줄로 */
@@ -81,53 +124,70 @@
 	<!--------------------------------------------------카테고리----------------------------------------------------------------->
 
 	<div class="selectBox">
-		<select class="box" id="price" onchange="price()" style="height:80px;">
+		<select class="box" id="price" name="price" onchange="price()" style="height:80px;">
 		  <option selected>가격</option>
-		  <option value="1"> ~ 1만원 </option>
-		  <option value="2"> 1만원 ~ 3만원 </option>
-		  <option value="3"> 3만원 ~ 5만원 </option>
-		  <option value="4"> 5만원 이상 </option>
+		  <option value="10000"> ~ 1만원 </option>
+		  <option value="30000"> 1만원 ~ 3만원 </option>
+		  <option value="50000"> 3만원 ~ 5만원 </option>
+		  <option value="50001"> 5만원 이상 </option>
 		</select>
   
-		  <select class="box" id="degree" onchange="degree()">
+  
+		  <select class="box" id="degree" name="degree" onchange="degree()">
 			  <option selected>도수</option>
-			  <option value="1"> ~ 5도 </option>
-			  <option value="2"> 5도 ~ 10도 </option>
-			  <option value="3"> 10도 이상 </option>
+			  <option value="5"> ~ 5도 </option>
+			  <option value="10"> 5도 ~ 10도 </option>
+			  <option value="11"> 10도 이상 </option>
 		  </select>
 		  
-		  <select class="box" id="volume" onchange="volume()">
+		  <select class="box" id="volume" name="volume" onchange="volume()">
 			  <option selected>용량</option>
-			  <option value="1"> ~ 100ml </option>
-			  <option value="2"> 100ml ~ 300ml </option>
-			  <option value="3"> 300ml 이상 </option>
+			  <option value="300"> ~ 300ml </option>
+			  <option value="500"> 300ml ~ 500ml </option>
+			  <option value="501"> 500ml 이상 </option>
 		  </select>
 		  
-		  <select class="box" id="star" onchange="star()">
+		  <select class="box" id="star" name="star" onchange="star()">
 			  <option selected>별점</option>
-			  <option value="1">5점</option>
-			  <option value="2">4점</option>
+			  <option value="6">5점</option>
+			  <%-- <fmt:formatNumber value="65.153454" pattern=".00"/> --%>
+			  <option value="4">4점</option>
 			  <option value="3">3점</option>
-			  <option value="4">2점</option>
-			  <option value="5">1점</option>
+			  <option value="2">2점</option>
+			  <option value="1">1점</option>
 		  </select>
 	  </div>
+  
 	<!--------------------------------------------------주류내용----------------------------------------------------------------->
+		<%-- aa: ${m_list[0].p_type } --%>
 		<c:if test="${ idx % 3 == 0 }">
 			<div class="menu_box">
-				<c:forEach var="vo" begin="0" end="13" items="${m_list}" >
-			
-					<div class="content">
-						
-						<!-- 이미지 클릭시 상세페이지로 넘어가기 -->
-						<img class="img" src="resources/img/${ vo.product_idx }.jpg" 
-							onclick="location.href='product.do?idx=${vo.idx}'">
-						<div class="name">이름 : ${ vo.name }</div>
-						<div class="volume">용량 : ${ vo.volume }</div>
-						<div class="price">가격 : ${ vo.price }</div>
-					</div>
+				<!-- for문에서 시작과 끝 정해주기 -->
+				<%-- <c:forEach var="vo" begin="0" end="13" items="${m_list}" > --%>
+				
+					<c:forEach var="vo" items="${m_list}">
+					<!-- 양조주인것만 보이기 -->
+					<c:if test="${ vo.p_type eq '양조주' }">
 					
-				</c:forEach>
+						<div class="content">
+							
+							<!-- 이미지 클릭시 상세페이지로 넘어가기 -->
+							<img class="img" src="resources/img/${ vo.product_idx }.jpg" 
+							onclick="location.href='product.do?idx=${vo.idx}'">	
+							
+							<div class="name"><br>${ vo.name }</div>
+							<div class="info">::: ${ vo.info } :::</div><br>
+							<div>====================================</div>
+							<div class="volume">별점 : ${ vo.star } 점</div>
+							<div class="volume">용량 : ${ vo.volume } ml</div>
+							<div class="degree">도수 : ${ vo.degree } 도</div>
+							<div class="price">가격 : ${ vo.price } 원</div>
+							<div>====================================</div>
+						</div>
+						</c:if>
+								
+					</c:forEach>
+				
 			</div>
 		</c:if>
 

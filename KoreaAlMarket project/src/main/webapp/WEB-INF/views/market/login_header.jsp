@@ -100,7 +100,7 @@ function search() {
 <body>
 <!--------------------------------------------------제목과 로그인----------------------------------------------------------------->
 	<div class="headerContainer">
-		<div class="logo"><a href="menu.do">신선노름</a></div>
+		<div class="logo"><a href="/market/menu.do">신선노름</a></div>
 <!--------------------------------------------------검색창 부트스트랩------------------------------------------------------------->
 	<div class="search">
 		<input class="form-control" id="search" placeholder="검색어를 입력하세요">

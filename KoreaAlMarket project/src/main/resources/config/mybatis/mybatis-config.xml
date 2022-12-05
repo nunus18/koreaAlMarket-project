@@ -10,6 +10,7 @@
 	
 	<typeAliases>
 		<typeAlias type="vo.MenuVO" alias="menu"/>
+		<typeAlias type="vo.OrderVO" alias="order"/>
 		<typeAlias type="vo.UserVO" alias="user"/>
 		<typeAlias type="vo.ShopVO" alias="shop"/>
 		<typeAlias type="vo.ProductVO" alias="product"/>

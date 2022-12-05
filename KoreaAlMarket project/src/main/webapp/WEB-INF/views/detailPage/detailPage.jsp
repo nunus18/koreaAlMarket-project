@@ -51,7 +51,13 @@
 	heigth: 200px;
 }
 </style>
+<script type="text/javascript">
+function in_cart(){
 
+	if(sessionScope.vo ne null)
+	
+}
+</script>
 </head>
 <body>
 
@@ -62,13 +68,13 @@
 		<jsp:include page="/WEB-INF/views/market/login_header.jsp"></jsp:include>
 	</c:if>
 	<br>
-	
+
 	<div class="line"></div>
 	<div class="content_top">
 		<div class="ct_left_area">
 			<img class="img" src="resources/img/${ productVo.product_idx }.jpg">
 		</div>
-	<div class="ct_right_area">
+		<div class="ct_right_area">
 			<div class="title">
 				<h1>${productVo.name}</h1>
 			</div>
@@ -83,23 +89,27 @@
 			<div class="line"></div>
 			<div class="button">
 				<div class="button_quantity">
-					<div class="product_number">남은 수량 : ${ productVo.product_number } 개</div>
+					<div class="product_number">남은 수량 : ${ productVo.product_number }
+						개</div>
 					주문수량 <select id="cnt" name="cnt" onchange="su();">
-									<option value="0">수량을 선택해주세요</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-							</select>
-					</span>
+						<option value="0">수량을 선택해주세요</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select> </span>
 				</div>
 				<div class="button_set">
-					<a class="btn_cart" onclick="">장바구니 담기</a> 
-					<a class="btn_buy" onclick="">바로구매</a>
+					<c:if test="${ sessionScope.vo ne null }">
+						<a class="btn_cart" onclick="in_cart()">장바구니 담기</a>
+					</c:if>
+					<c:if test="${ sessionScope.vo eq null }">
+						<a class="btn_cart" onclick="location.href='login.do'">장바구니 담기</a>
+					</c:if>
 				</div>
 			</div>
-	</div>
+		</div>
 	</div>
 	<div class="line"></div>
 	<!-- 술댓글로 바꿔야함 -->

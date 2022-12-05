@@ -3,8 +3,15 @@ package vo;
 public class ShopVO {
 	
 	private int idx,product_idx,buyNO,price;
-	private String userId,regdate,add_select,state;
+	private String userId,regdate,add_select,state,shopname;
 	
+	
+	public String getShopname() {
+		return shopname;
+	}
+	public void setShopname(String shopname) {
+		this.shopname = shopname;
+	}
 	public int getIdx() {
 		return idx;
 	}

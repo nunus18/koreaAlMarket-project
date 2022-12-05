@@ -8,8 +8,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from product where star >= 5
 	</select>	
 
-	<select id="menu_list" resultType="menu">
-		select * from product order by idx
+	<!-- menuVO -->
+	<select id="menu_list" resultType="menu" parameterType="java.util.HashMap">
+		<!-- select * from product order by idx -->
+		select * from product where price between #{s} and #{e} order by idx
+	</select>
+	
+	<select id="degree_list" resultType="menu" parameterType="java.util.HashMap">
+		<!-- select * from product order by idx -->
+		select * from product where degree between #{s} and #{e} order by idx
+	</select>
+	
+	<select id="volume_list" resultType="menu" parameterType="java.util.HashMap">
+		<!-- select * from product order by idx -->
+		select * from product where volume between #{s} and #{e} order by idx
+	</select>
+	
+	<select id="star_list" resultType="menu" parameterType="java.util.HashMap">
+		<!-- select * from product order by idx -->
+		select * from product where star between #{s} and #{e} order by idx
 	</select>
 	
 	<select id="search" resultType="menu"

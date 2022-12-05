@@ -36,9 +36,5 @@ public class ShopDAO {
 	public int update(ShopVO vo) {
 		int res = sqlSession.update("s.updateCnt",vo);
 		return res;
-	}
-
-	
-
-	
+	}	
 }
